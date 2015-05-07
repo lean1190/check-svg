@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="description" content="SVG Checker and replacer">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript,AJAX,SVG,CHECK,REPLACE,SIMPLE,EASY,LIGHT,GITHUB">
+    <!-- https://github.com/leito9008 -->
+    <meta name="author" content="Leandro Nicolás Vilas">
+
+    <title>AJAX Promises</title>
+    <!-- Icon Created by iconsmind.com -->
+    <!-- from the Noun Project (https://thenounproject.com) -->
+    <link rel="icon" type="image/png" href="resources/favicon.png" />
+    <script src="check-svg.js"></script>
+</head>
+
+<body>
+    <p id="output"></p>
+
+    <!-- Thanks to Dream Icons and Matt Brooks from the Noun Project for the SVG and PNG images -->
+    <img src="resources/svg/test1.svg" alt="svg test image1" />
+    <div>
+        <div>
+            <img src="resources/svg/test2.svg" alt="svg test image2" />
+        </div>
+    </div>
+
+    <h2><img src="resources/svg/test3.svg" alt="svg test image3" /></h2>
+
+    <script>
+        window.onload = (function () {
+            var supportsSvg = checksvg.supportsSvg();
+            console.log("Is this browser SVG compliant??", supportsSvg);
+            document.getElementById("output").innerHTML = "<h1>SVG support: " + supportsSvg + "</h1>";
+
+            //checksvg.replaceSvgWithPng();
+        }());
+    </script>
+
+</body>
+
+</html>
