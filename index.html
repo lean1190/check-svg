@@ -8,11 +8,17 @@
     <!-- https://github.com/leito9008 -->
     <meta name="author" content="Leandro Nicolás Vilas">
 
-    <title>AJAX Promises</title>
+    <title>Check SVG</title>
     <!-- Icon Created by iconsmind.com -->
     <!-- from the Noun Project (https://thenounproject.com) -->
     <link rel="icon" type="image/png" href="resources/favicon.png" />
     <script src="check-svg.js"></script>
+
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,11 +36,15 @@
 
     <script>
         window.onload = (function () {
+            checksvg.setPngFolderPath("/resources/png/");
+            checksvg.setReplaceImageFormat(".png");
             var supportsSvg = checksvg.supportsSvg();
             console.log("Is this browser SVG compliant??", supportsSvg);
             document.getElementById("output").innerHTML = "<h1>SVG support: " + supportsSvg + "</h1>";
 
-            //checksvg.replaceSvgWithPng();
+            if (supportsSvg) {
+                checksvg.replaceSvgWithPng();
+            }
         }());
     </script>
 
